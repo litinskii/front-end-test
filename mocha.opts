@@ -1,0 +1,9 @@
+--max-old-space-size=8192
+--nouse-idle-notification
+--reporter mochawesome
+--require babel-core/register
+--require babel-polyfill
+--timeout 80s
+--inline-diffs
+--reporter-options inlineAssets=true,reportFilename=index
+src/configuration/index.js
