@@ -13,6 +13,12 @@
     "before": true,
     "after": true,
     "afterEach": true,
-    "beforeEach": true
+    "beforeEach": true,
+    "fetch": true
+  },
+  "rules": {
+    "quotes": ["error", "double"],
+    "max-len": ["error", { "code": 140 }],
+    "no-console": ["error", { "allow": ["warn", "error"] }]
   }
 }

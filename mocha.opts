@@ -3,7 +3,8 @@
 --reporter mochawesome
 --require babel-core/register
 --require babel-polyfill
+--require isomorphic-fetch
 --timeout 80s
 --inline-diffs
 --reporter-options inlineAssets=true,reportFilename=index
-src/configuration/index.js
+src/configuration/setup.js
