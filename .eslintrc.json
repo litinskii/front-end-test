@@ -14,7 +14,8 @@
     "after": true,
     "afterEach": true,
     "beforeEach": true,
-    "fetch": true
+    "fetch": true,
+    "driver": true
   },
   "rules": {
     "quotes": ["error", "double"],
