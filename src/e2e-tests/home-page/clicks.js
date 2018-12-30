@@ -10,11 +10,18 @@ export default () => {
     await dom.waitUntilElementTextIs({ css: ".e2e-home-clicked-counter" }, "Home clicks: 1");
   });
 
-  it("should throw Error and then skip steps", async () => {
-    throw new Error("Throw error to show how to skip step");
+  it("should update counter to 2 after click on Home Page", async () => {
+    //await dom.clickWhenPossible({ css: ".e2e-home" });
+    await dom.waitUntilElementTextIs({ css: ".e2e-home-clicked-counter" }, "Home clicks: 2");
   });
 
-  it("should skip step", async () => {});
+  it("should update counter to 3 after click on Home Page", async () => {
+    await dom.clickWhenPossible({ css: ".e2e-home" });
+    await dom.waitUntilElementTextIs({ css: ".e2e-home-clicked-counter" }, "Home clicks: 3");
+  });
 
-  it("should skip another step", async () => {});
+  it("should update counter to 4 after click on Home Page", async () => {
+    await dom.clickWhenPossible({ css: ".e2e-home" });
+    await dom.waitUntilElementTextIs({ css: ".e2e-home-clicked-counter" }, "Home clicks: 4");
+  });
 };
