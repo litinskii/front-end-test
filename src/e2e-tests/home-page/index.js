@@ -1,4 +1,5 @@
 import Clicks from "./clicks";
+import Links from "./links";
 import { api, page } from "../../utils";
 
 describe("Home page @home-page", function() {
@@ -8,4 +9,5 @@ describe("Home page @home-page", function() {
   });
 
   describe("Clicks", Clicks);
+  describe("Links", Links);
 });

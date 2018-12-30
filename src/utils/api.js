@@ -12,12 +12,12 @@ const checkStatus = response => {
 
 const parseJSON = response => response.json();
 
-const get = async url => await parseJSON(checkStatus(await fetch(`${API_URL}${url}`)));
+const get = async url => await parseJSON(checkStatus(await fetch(`${API_URL}/${url}`)));
 
 const set = async (url, params) =>
   await parseJSON(
     checkStatus(
-      await fetch(`${API_URL}${url}`, {
+      await fetch(`${API_URL}/${url}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
