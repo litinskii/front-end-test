@@ -4,7 +4,7 @@ import webdriver from "selenium-webdriver";
 import addContext from "mochawesome/addContext";
 import { getTitlePathWithoutCurrentTest } from "../utils";
 const IMAGE_DIR = "./mochawesome-report/images";
-const FAILED_TESTS_BY_PARENT = {};
+const FAILED_TESTS_BY_PARENT = [];
 
 before(async () => {
   global.driver = new webdriver.Builder().forBrowser("chrome").build();
@@ -19,7 +19,7 @@ before(async () => {
 
 beforeEach(function() {
   const titlePathWithoutCurrentTest = getTitlePathWithoutCurrentTest(this.currentTest.titlePath());
-  if (FAILED_TESTS_BY_PARENT[titlePathWithoutCurrentTest]) {
+  if (FAILED_TESTS_BY_PARENT.find(title => ~titlePathWithoutCurrentTest.indexOf(title))) {
     this.skip();
   }
 });
@@ -31,7 +31,7 @@ after(done => {
 afterEach(function() {
   const titlePathWithoutCurrentTest = getTitlePathWithoutCurrentTest(this.currentTest.titlePath());
   if (this.currentTest.state === "failed") {
-    FAILED_TESTS_BY_PARENT[titlePathWithoutCurrentTest] = true;
+    FAILED_TESTS_BY_PARENT.push(titlePathWithoutCurrentTest);
   }
 });
 

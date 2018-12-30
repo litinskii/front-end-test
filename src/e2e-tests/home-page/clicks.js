@@ -24,4 +24,10 @@ export default () => {
     await dom.clickWhenPossible({ css: ".e2e-home" });
     await dom.waitUntilElementTextIs({ css: ".e2e-home-clicked-counter" }, "Home clicks: 4");
   });
+
+  describe("Inner Clicks", () => {
+    it("Test 1", async () => {});
+    it("Test 2", async () => {});
+    it("Test 3", async () => {});
+  });
 };
